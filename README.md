@@ -87,3 +87,33 @@ doc2md/
 ├── requirement.txt
 └── README.md
 ```
+
+## 📦 Dependencies
+
+Chỉ liệt kê các thư viện cốt lõi — các gói phụ thuộc còn lại được `pip` cài tự động.
+
+| Package | Mục đích |
+|---|---|
+| `google-genai` | Tóm tắt tài liệu & Smart Convert bằng Gemini AI |
+| `markitdown[pdf]` | Chuyển đổi tài liệu → Markdown (PDF, DOCX, PPTX, XLSX…) |
+| `pymupdf` | Render & trích xuất nội dung PDF |
+| `pdfplumber` | Trích xuất bảng biểu từ PDF |
+| `pytesseract` | OCR cho tài liệu scan / ảnh |
+| `pillow` | Xử lý ảnh |
+| `ddgs` | Tìm kiếm DuckDuckGo |
+| `requests` | Tải file qua HTTP |
+| `customtkinter` | Giao diện đồ họa hiện đại (Dark/Light mode) |
+| `python-dotenv` | Đọc cấu hình từ file `.env` |
+
+## 🛠️ Những gì được xây dựng trong dự án
+
+| Module | Chức năng |
+|---|---|
+| [`gui.py`](gui.py) | Ứng dụng Desktop đầy đủ với 5 tab, xây dựng bằng `customtkinter` |
+| [`core/auto_convert.py`](core/auto_convert.py) | Theo dõi thư mục thời gian thực, xử lý đa luồng & chuyển PDF → Markdown |
+| [`core/smart_convert.py`](core/smart_convert.py) | Hybrid extraction: nhận diện văn bản thuần → bảng biểu → OCR tự động |
+| [`core/search.py`](core/search.py) | Tìm kiếm đa nguồn (DuckDuckGo, ArXiv, Semantic Scholar) và tải PDF |
+| [`core/ai_summary.py`](core/ai_summary.py) | Tóm tắt từng tài liệu Markdown bằng Gemini AI |
+| [`core/master_summary.py`](core/master_summary.py) | Tổng hợp toàn bộ tóm tắt thành một báo cáo Master Summary |
+| [`core/archiver.py`](core/archiver.py) | Tự động lưu trữ file PDF gốc sau khi xử lý |
+| [`core/history_manager.py`](core/history_manager.py) | Lưu & quản lý lịch sử tải file trong `history.json` |
